@@ -1,0 +1,24 @@
+{
+  "entrypoints" : [
+    {
+      "name" : "Features List",
+      "file" : "index.html"
+    },
+    {
+      "name" : "Home Page",
+      "file" : "Design Specs-01.png"
+    },
+    {
+      "name" : "Products List Page",
+      "file" : "Design Specs-02.png"
+    },
+    {
+      "name" : "Product Page",
+      "file" : "Design Specs-03.png"
+    },
+    {
+      "name" : "AI file",
+      "file" : "Design Specs.ai"
+    }
+  ]
+}
