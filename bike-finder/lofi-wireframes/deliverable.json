@@ -1,10 +1,6 @@
 {
   "entrypoints" : [
     {
-      "name" : "Features List",
-      "file" : "index.html"
-    },
-    {
       "name" : "Home Page",
       "file" : "Design Specs-01.png"
     },
