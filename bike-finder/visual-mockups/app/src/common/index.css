@@ -1,0 +1,106 @@
+.dropDown{
+    height: 32px;
+    min-width: 64px;
+    position: relative;
+}
+
+.dropDown .dropDownIcon{
+    float: left;
+    margin-right: 4px;
+    text-align: center;
+    height: 32px;
+    width: 24px;
+}
+
+.dropDown .dropDownIcon .glyphicon{
+    line-height: 32px;
+    font-size: 20px;
+}
+
+.dropDown .box{
+    float: left;
+    height: 32px;
+    min-width: 64px;
+    background-color: #333333;
+    color: #fffaf0;
+    display: flex;
+    cursor: pointer;
+    position: relative;
+}
+
+.dropDown .box .current{
+    height: 24px;
+    margin: 4px 8px 4px 12px;
+    line-height: 24px;
+    flex: 1;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.dropDown .box .openButton{
+    height: 24px;
+    flex: 0 0 24px;
+    margin: 4px 8px;
+    font-size: 14px;
+}
+
+.dropDown .box .openButton .glyphicon{
+    line-height: 24px;
+    text-align: center;
+}
+
+.dropDown .box .options{
+    position: absolute;
+    top: 37px;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 24px;
+    background-color: #333333;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 5px 10px;
+    padding: 4px 0;
+}
+
+.dropDown .box .options .option{
+    color: #f8f8f8;
+    height: 32px;
+    box-sizing: border-box;
+    padding: 8px 12px;
+    line-height: 16px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/**
+Star Rating
+ */
+
+.starRating{
+    position: relative;
+    height: 20px;
+    width: 100px;
+}
+
+.starRating .glyphicon{
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+    margin: 2px;
+}
+
+.starRating .emptyStars{
+    color: #666666;
+    position: relative;
+    height: 20px;
+    width: 100px;
+}
+
+.starRating .filledStars{
+    color: #FFBD34;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    height: 20px;
+    white-space: nowrap;
+}

@@ -1,0 +1,265 @@
+.listings{
+    width: 100vw;
+    display: flex;
+    align-items: flex-start;
+    font-family: 'Oxygen', sans-serif;
+}
+
+.listings .filters{
+    flex: 0 0 25vw;
+    max-width: 300px;
+    margin: 40px 2.5vw;
+    min-height: 80px;
+    background-color: #f8f8f8;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 5px 10px;
+}
+
+.listings .main{
+    flex: 1;
+    min-height: 90vh;
+    margin: 40px 64px 0 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.listings .main .refinements{
+    flex: 0 0 48px;
+    background-color: #f8f8f8;
+    margin-bottom: 16px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 5px 10px;
+    display: flex;
+}
+
+.listings .main .refinements .activeFilters{
+    flex: 1;
+    margin: 8px;
+}
+
+.listings .main .refinements .sort{
+    flex: 0 0 180px;
+    margin: 8px;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.listings .main .pinned{
+    flex: 0 0 200px;
+    background-color: #f8f8f8;
+    margin-bottom: 16px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 5px 10px;
+}
+
+.listings .main .results{
+    background-color: #f8f8f8;
+    min-height: 200px;
+}
+
+/*
+    FILTERS
+*/
+
+.filter {
+    min-height: 48px;
+    width: 100%;
+    border-bottom: #c8c8c8 solid 2px;
+}
+
+.filter .filterHeader{
+    display: flex;
+    height: 48px;
+    padding: 8px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.filter .filterHeader .filterTitle{
+    flex: 1;
+    line-height: 32px;
+    font-size: 24px;
+}
+
+.filter .filterHeader .filterToggle{
+    flex: 0 0 24px;
+    border: #333333 solid 2px;
+    border-radius: 12px;
+    text-align: center;
+    margin: 4px
+}
+
+.filter .filterHeader .filterToggle .glyphicon{
+    line-height: 24px;
+    font-size: 16px;
+    right: -1px;
+}
+
+.filter .filterOptions{
+    background-color: #c8c8c8;
+    overflow: hidden;
+}
+
+.filter .filterOptions .filterOption{
+    display: flex;
+    height: 48px;
+    padding: 8px;
+    box-sizing: border-box;
+    cursor: pointer;
+    border-top: solid 1px #e8e8e8;
+}
+
+.filter .filterOptions .filterOption .optionTitle{
+    flex: 1;
+    line-height: 32px;
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+.filter .filterOptions .filterOption .optionToggle{
+    flex: 0 0 20px;
+    height: 20px;
+    border: #333333 solid 3px;
+    border-radius: 12px;
+    margin: 6px
+}
+
+.filter .colorOptions{
+    background-color: #c8c8c8;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 8px 20px;
+    box-sizing: border-box;
+}
+
+.filter .colorOptions .colorOption{
+    flex: 0 0 30px;
+    height: 30px;
+    border: solid 3px;
+    border-radius: 20px;
+    margin: 4px;
+    cursor: pointer;
+}
+
+/**
+Refinement Bar
+ */
+
+.activeFilter{
+    float: left;
+    height: 32px;
+    min-width: 60px;
+    background-color: #3c3f41;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 5px 10px;
+    margin-right: 10px;
+    position: relative;
+    padding: 0 32px 0 8px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    color: #f8f8f8;
+}
+
+.activeFilter .filterName{
+    border-bottom: dashed 2px #5F9EA0;
+    height: 32px;
+    line-height: 32px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.activeFilter .remove{
+    position: absolute;
+    right: 4px;
+    top: 0;
+    height: 32px;
+    width: 24px;
+    text-align: center;
+    color: #f8f8f8;
+    cursor: pointer;
+}
+
+.activeFilter .remove .glyphicon{
+    line-height: 32px;
+}
+
+/**
+PRODUCT
+ */
+
+.productTile{
+    width: calc(calc(calc(70vw - 64px) / 3) - 42px);
+    height: calc(calc(calc(70vw - 64px) / 3) - 42px);
+    box-sizing: border-box;
+    margin: 10px;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    border: solid 1px #333333;
+    padding: 10px;
+}
+
+.productTile > div{
+    display: flex;
+}
+
+.productTile div .colorOptions{
+    flex: 0 0 30px;
+}
+
+.productTile div .colorOption{
+    width: 30px;
+    height: 30px;
+    border: solid 3px #aaaaaa;
+    border-radius: 20px;
+    margin: 4px;
+}
+
+.productTile div .productImage{
+    flex: 1;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.productTile div .logo{
+    flex: 1;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.productTile div .title{
+    flex: 2;
+    text-align: right;
+    line-height: calc(calc(calc(calc(70vw - 64px) / 3) - 42px) / 5);
+    font-size: calc(calc(calc(calc(calc(70vw - 64px) / 3) - 42px) / 5) * 0.65);
+    font-weight: bold;
+}
+
+.productTile div .info{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    line-height: calc(calc(calc(calc(70vw - 64px) / 3) - 42px) / 15);
+    font-size: calc(calc(calc(calc(calc(70vw - 64px) / 3) - 42px) / 15) * 0.65);
+}
+
+.productTile div .info .stars{
+    flex: 0 0 20px;
+}
+
+.productTile div .info .year{
+    flex: 1;
+    font-weight: bold;
+}
+
+.productTile div .info .types{
+    flex: 1;
+    font-style: italic;
+}
+
+.productTile div .price{
+    flex: 1;
+    text-align: right;
+    line-height: calc(calc(calc(calc(70vw - 64px) / 3) - 42px) / 5);
+    font-size: calc(calc(calc(calc(calc(70vw - 64px) / 3) - 42px) / 5) * 0.65);
+}
