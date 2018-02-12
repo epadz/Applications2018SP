@@ -5,14 +5,14 @@ const ColorDot = ({colors = [], selected = false}) => {
   switch(colors.length){
     case 2:
       return(
-          <div className="colorDot" style={selected ? {borderColor: '#333'} : {}}>
+          <div className={selected ? 'colorDotSelected' : 'colorDot'} style={selected ? {borderColor: '#333'} : {}}>
             <div style={{backgroundColor:colors[0], width: '100%', height: '50%'}} />
             <div style={{backgroundColor:colors[1], width: '100%', height: '50%'}} />
           </div>
       );
     case 3:
       return(
-          <div className="colorDot" style={selected ? {borderColor: '#333'} : {}}>
+          <div className={selected ? 'colorDotSelected' : 'colorDot'} style={selected ? {borderColor: '#333'} : {}}>
             <div style={{backgroundColor:colors[0], width: '50%', height: '50%'}} />
             <div style={{backgroundColor:colors[1], width: '50%', height: '50%'}} />
             <div style={{backgroundColor:colors[2], width: '100%', height: '50%'}} />
@@ -20,7 +20,7 @@ const ColorDot = ({colors = [], selected = false}) => {
       );
     case 4:
       return(
-          <div className="colorDot" style={selected ? {borderColor: '#333'} : {}}>
+          <div className={selected ? 'colorDotSelected' : 'colorDot'} style={selected ? {borderColor: '#333'} : {}}>
             <div style={{backgroundColor:colors[0], width: '50%', height: '50%'}} />
             <div style={{backgroundColor:colors[1], width: '50%', height: '50%'}} />
             <div style={{backgroundColor:colors[2], width: '50%', height: '50%'}} />
@@ -30,7 +30,7 @@ const ColorDot = ({colors = [], selected = false}) => {
     case 1:
     default:
       return(
-          <div className="colorDot" style={selected ? {borderColor: '#333'} : {}}>
+          <div className={selected ? 'colorDotSelected' : 'colorDot'} style={selected ? {borderColor: '#333'} : {}}>
             <div style={{backgroundColor:colors[0], width: '100%', height: '100%'}} />
           </div>
       );

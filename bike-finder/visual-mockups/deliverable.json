@@ -1,0 +1,40 @@
+{
+  "entrypoints" : [
+    {
+      "name" : "Index",
+      "file" : "index.html"
+    },
+    {
+      "name" : "Home Page",
+      "file" : "home.png"
+    },
+    {
+      "name" : "Products List Page",
+      "file" : "listings.png"
+    },
+    {
+      "name" : "Product Page",
+      "file" : "product.png"
+    },
+    {
+      "name" : "Product Page Change Color",
+      "file" : "color.png"
+    },
+    {
+      "name" : "Product Page Change Size",
+      "file" : "buttons.png"
+    },
+    {
+      "name" : "Product Page FAQ",
+      "file" : "faq.png"
+    },
+    {
+      "name" : "Product Page Sizing",
+      "file" : "sizing.png"
+    },
+    {
+      "name" : "Product Page Specs",
+      "file" : "specs.png"
+    }
+  ]
+}

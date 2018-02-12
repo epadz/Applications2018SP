@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './index.css';
+import img2 from '../assets/bikes/trekProcaliber2.jpg';
+import Rockhopper from '../assets/bikes/specializedRockhopper.jpg';
 
 class Home extends Component {
 
@@ -28,11 +30,11 @@ class Home extends Component {
           <div className="features">
             <div className="featured">
               <div className="featuredHeader" >Featured Bikes</div>
-              <div className="featuredImage" />
+              <div className="featuredImage" style={{backgroundImage: `url(${img2})`}} />
             </div>
             <div className="featured">
               <div className="featuredHeader" >On Sale Now</div>
-              <div className="featuredImage" />
+              <div className="featuredImage" style={{backgroundImage: `url(${Rockhopper})`}} />
             </div>
           </div>
         </div>

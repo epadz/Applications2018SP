@@ -9,20 +9,43 @@ import img2 from '../assets/bikes/trekProcaliber2.jpg';
 import img3 from '../assets/bikes/trekProcaliber3.jpg';
 import img4 from '../assets/bikes/trekProcaliber4.jpg';
 import img5 from '../assets/bikes/trekProcaliber5.jpg';
+import orange from '../assets/bikes/trekProcaliberOrange1.jpg';
+import o2 from '../assets/bikes/trekProcaliberO2.jpg'
+import o3 from '../assets/bikes/trekProcaliberO3.jpg'
 import trek from '../assets/logos/trek.png';
 
+const SPECS = 'specs';
+const SIZING = 'sizing';
+const FAQ = 'faq';
+
 class Product extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      tab: FAQ,
+    }
+  }
+
+  scroll;
+  details;
+
+  componentDidMount(){
+    this.scroll.scrollTop = this.details.offsetHeight + 100;
+  }
 
   render() {
     return (
-        <div className="product" style={{backgroundImage: `url(${img2})`}}>
+        <div className="product" style={{backgroundImage: `url(${img2})`}} ref={elem => this.scroll = elem}>
+          <div className="goBack">back</div>
+          <div className="prevItem">prev&nbsp;&nbsp;<Glyphicon glyph="chevron-left" /></div>
+          <div className="nextItem"><Glyphicon glyph="chevron-right" />&nbsp;&nbsp;next</div>
           <div className="spacer"/>
-          <div className="info">
+          <div className="info" ref={elem => this.details = elem}>
             <div className="gallery">
-              <div className="curImage" style={{backgroundImage: `url(${img1})`}} />
+              <div className="curImage" style={{backgroundImage: `url(${img4})`}} />
               <div className="galleryNav">
                 <div className="galleryItem" style={{backgroundImage: `url(${img3})`}} />
-                <div className="galleryItem" style={{backgroundImage: `url(${img4})`}} />
+                <div className="galleryItem" style={{backgroundImage: `url(${img1})`}} />
                 <div className="galleryItem" style={{backgroundImage: `url(${img5})`}} />
               </div>
             </div>
@@ -48,8 +71,8 @@ class Product extends Component {
               <div className="buy">
                 <div className="colors">
                   <div className="label">Color</div>
-                  <span><ColorDot colors={['#cccccc', '#000000']}/></span>
-                  <span><ColorDot colors={['#FF9133', '#000000']}/></span>
+                  <span><ColorDot colors={['#cccccc', '#000000']} selected /></span>
+                  <span><ColorDot colors={['#FF9133', '#000000']} /></span>
                   <span><ColorDot colors={['#ffffff', '#05B611', '#0D2C78']}/></span>
                 </div>
                 <div className="sizing">
@@ -63,122 +86,213 @@ class Product extends Component {
                   ]}/>
                 </div>
                 <div className="addToCart">
-                  <Button text="Add to cart" type="cart" />
+                  <Button text="Add to Cart" type="cart" />
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="specs" style={{maxHeight: '350px'}}>
+          <div className="specs">
             <div className="tabs">
-              <div className="active">Technical Specs</div>
-              <div className="tab">Sizing</div>
-              <div className="tab">FAQ</div>
+              <div className={this.state.tab === SPECS ? 'active' : 'tab'} onClick={() => this.setState({tab: SPECS})}>Technical Specs</div>
+              <div className={this.state.tab === SIZING ? 'active' : 'tab'} onClick={() => this.setState({tab: SIZING})}>Sizing</div>
+              <div className={this.state.tab === FAQ ? 'active' : 'tab'} onClick={() => this.setState({tab: FAQ})}>FAQ</div>
             </div>
-            <div className="content" style={{display:'block'}}>
-              <div className="title">Frameset</div>
-              <div className="table">
-                <div className="row">
-                  <div className="cell">Frame</div>
-                  <div className="cell">Super Light OCLV Mountain Carbon, IsoSpeed, E2 tapered head tube, MicroTruss, Control Freak internal routing, balanced post mount brake, PF92, Boost148 & G2 Geometry on 17.5˝ and larger sizes</div>
-                </div>
-                <div className="row">
-                  <div className="cell">Front suspension</div>
-                  <div className="cell">RockShox SID RL, Solo Air, Motion Control remote lockout, E2 tapered steerer, G2 Geometry w/51mm offset on 29ers, Boost110, 100mm travel</div>
-                </div>
-              </div>
+            {
+              this.state.tab === SPECS ?
+                  <div className="content">
+                    <div className="title">Frameset</div>
+                    <div className="table">
+                      <div className="row">
+                        <div className="cell">Frame</div>
+                        <div className="cell">Super Light OCLV Mountain Carbon, IsoSpeed, E2 tapered head tube, MicroTruss, Control Freak internal routing, balanced post mount brake, PF92, Boost148 & G2 Geometry on 17.5˝ and larger sizes</div>
+                      </div>
+                      <div className="row">
+                        <div className="cell">Front suspension</div>
+                        <div className="cell">RockShox SID RL, Solo Air, Motion Control remote lockout, E2 tapered steerer, G2 Geometry w/51mm offset on 29ers, Boost110, 100mm travel</div>
+                      </div>
+                    </div>
 
-              <div className="title">Wheels</div>
-              <div className="table">
-                <div className="row">
-                  <div className="cell">Wheels</div>
-                  <div className="cell">Bontrager Kovee Elite 23, Tubeless Ready, 54T Rapid Drive, Boost110 front, Boost148 rear (15.5˝: 142x12 rear), tubeless strips included, valves sold separately</div>
-                </div>
-                <div className="row">
-                  <div className="cell">Tires</div>
-                  <div className="cell">Bontrager XR2 Team Issue, Tubeless Ready, 120 tpi, aramid bead, 29x2.20˝ (15.5: 27.5x2.20˝)</div>
-                </div>
-              </div>
+                    <div className="title">Wheels</div>
+                    <div className="table">
+                      <div className="row">
+                        <div className="cell">Wheels</div>
+                        <div className="cell">Bontrager Kovee Elite 23, Tubeless Ready, 54T Rapid Drive, Boost110 front, Boost148 rear (15.5˝: 142x12 rear), tubeless strips included, valves sold separately</div>
+                      </div>
+                      <div className="row">
+                        <div className="cell">Tires</div>
+                        <div className="cell">Bontrager XR2 Team Issue, Tubeless Ready, 120 tpi, aramid bead, 29x2.20˝ (15.5: 27.5x2.20˝)</div>
+                      </div>
+                    </div>
 
-              <div className="title">Drivetrain</div>
-              <div className="table">
-                <div className="row">
-                  <div className="cell">Shifters</div>
-                  <div className="cell">SRAM GX Eagle, 12 speed</div>
-                </div>
-                <div className="row">
-                  <div className="cell">Rear derailleur</div>
-                  <div className="cell">SRAM GX Eagle, Roller Bearing Clutch</div>
-                </div>
-                <div className="row">
-                  <div className="cell">Crank</div>
-                  <div className="cell">SRAM Stylo Carbon Eagle, 32T</div>
-                </div>
-                <div className="row">
-                  <div className="cell">Bottom bracket</div>
-                  <div className="cell">PF92</div>
-                </div>
-                <div className="row">
-                  <div className="cell">Cassette</div>
-                  <div className="cell">SRAM XG-1275, 10-50, 12 speed</div>
-                </div>
-                <div className="row">
-                  <div className="cell">Chain</div>
-                  <div className="cell">SRAM GX Eagle</div>
-                </div>
-                <div className="row">
-                  <div className="cell">Pedals</div>
-                  <div className="cell">Not included</div>
-                </div>
-              </div>
-              <div className="title">Components</div>
-              <div className="table">
-                <div className="row">
-                  <div className="cell">Saddle</div>
-                  <div className="cell">Bontrager Montrose Elite, hollow titanium rails</div>
-                </div>
-                <div className="row">
-                  <div className="cell">Seatpost</div>
-                  <div className="cell">Bontrager Pro, OCLV Carbon, 31.6mm, 5mm offset</div>
-                </div>
-                <div className="row">
-                  <div className="cell">Handlebar</div>
-                  <div className="cell">Bontrager Race X Lite, OCLV Carbon, 31.8mm, 5mm rise, 720mm width</div>
-                </div>
-                <div className="row">
-                  <div className="cell">Grips</div>
-                  <div className="cell">ESI Chunky</div>
-                </div>
-                <div className="row">
-                  <div className="cell">Stem</div>
-                  <div className="cell">Bontrager Pro, 31.8mm, 7 degree</div>
-                </div>
-                <div className="row">
-                  <div className="cell">Headset</div>
-                  <div className="cell">FSA IS-2, 1-1/8˝ top, 1.5˝ bottom</div>
-                </div>
-                <div className="row">
-                  <div className="cell">Brakeset</div>
-                  <div className="cell">SRAM Level TLM hydraulic disc</div>
-                </div>
-              </div>
+                    <div className="title">Drivetrain</div>
+                    <div className="table">
+                      <div className="row">
+                        <div className="cell">Shifters</div>
+                        <div className="cell">SRAM GX Eagle, 12 speed</div>
+                      </div>
+                      <div className="row">
+                        <div className="cell">Rear derailleur</div>
+                        <div className="cell">SRAM GX Eagle, Roller Bearing Clutch</div>
+                      </div>
+                      <div className="row">
+                        <div className="cell">Crank</div>
+                        <div className="cell">SRAM Stylo Carbon Eagle, 32T</div>
+                      </div>
+                      <div className="row">
+                        <div className="cell">Bottom bracket</div>
+                        <div className="cell">PF92</div>
+                      </div>
+                      <div className="row">
+                        <div className="cell">Cassette</div>
+                        <div className="cell">SRAM XG-1275, 10-50, 12 speed</div>
+                      </div>
+                      <div className="row">
+                        <div className="cell">Chain</div>
+                        <div className="cell">SRAM GX Eagle</div>
+                      </div>
+                      <div className="row">
+                        <div className="cell">Pedals</div>
+                        <div className="cell">Not included</div>
+                      </div>
+                    </div>
+                    <div className="title">Components</div>
+                    <div className="table">
+                      <div className="row">
+                        <div className="cell">Saddle</div>
+                        <div className="cell">Bontrager Montrose Elite, hollow titanium rails</div>
+                      </div>
+                      <div className="row">
+                        <div className="cell">Seatpost</div>
+                        <div className="cell">Bontrager Pro, OCLV Carbon, 31.6mm, 5mm offset</div>
+                      </div>
+                      <div className="row">
+                        <div className="cell">Handlebar</div>
+                        <div className="cell">Bontrager Race X Lite, OCLV Carbon, 31.8mm, 5mm rise, 720mm width</div>
+                      </div>
+                      <div className="row">
+                        <div className="cell">Grips</div>
+                        <div className="cell">ESI Chunky</div>
+                      </div>
+                      <div className="row">
+                        <div className="cell">Stem</div>
+                        <div className="cell">Bontrager Pro, 31.8mm, 7 degree</div>
+                      </div>
+                      <div className="row">
+                        <div className="cell">Headset</div>
+                        <div className="cell">FSA IS-2, 1-1/8˝ top, 1.5˝ bottom</div>
+                      </div>
+                      <div className="row">
+                        <div className="cell">Brakeset</div>
+                        <div className="cell">SRAM Level TLM hydraulic disc</div>
+                      </div>
+                    </div>
 
-              <div className="title">Weight</div>
-              <div className="table">
-                <div className="row">
-                  <div className="cell">Weight</div>
-                  <div className="cell">17.5" - 10.02 kg / 22.10 lbs</div>
-                </div>
-                <div className="row">
-                  <div className="cell">Weight Limit</div>
-                  <div className="cell">This bike has a maximum total weight limit (combined weight of bicycle, rider, and cargo) of 300 pounds (136 kg).</div>
-                </div>
-              </div>
-            </div>
-            <div className="content" style={{display:'none'}}>
+                    <div className="title">Weight</div>
+                    <div className="table">
+                      <div className="row">
+                        <div className="cell">Weight</div>
+                        <div className="cell">17.5" - 10.02 kg / 22.10 lbs</div>
+                      </div>
+                      <div className="row">
+                        <div className="cell">Weight Limit</div>
+                        <div className="cell">This bike has a maximum total weight limit (combined weight of bicycle, rider, and cargo) of 300 pounds (136 kg).</div>
+                      </div>
+                    </div>
+                  </div>
+                  : this.state.tab === SIZING ?
+                  <div className="content">
+                    <div className="sizeChart">
+                      <div className="row">
+                        <div className="cell"><span>4'9"</span><span /></div>
+                        <div className="cell"><span>4'10"</span></div>
+                        <div className="cell"><span>4'11"</span><span /></div>
+                        <div className="cell"><span>5'1"</span></div>
+                        <div className="cell"><span>5'2"</span><span /></div>
+                        <div className="cell"><span>5'3"</span></div>
+                        <div className="cell"><span>5'4"</span><span /></div>
+                        <div className="cell"><span>5'5"</span></div>
+                        <div className="cell"><span>5'7"</span><span /></div>
+                        <div className="cell"><span>5'7"</span></div>
+                        <div className="cell"><span>5'8"</span><span /></div>
+                        <div className="cell"><span>5'9"</span></div>
+                        <div className="cell"><span>5'10"</span><span /></div>
+                        <div className="cell"><span>5'11"</span></div>
+                        <div className="cell"><span>6'1"</span><span /></div>
+                        <div className="cell"><span>6'2"</span></div>
+                        <div className="cell"><span>6'3"</span><span /></div>
+                        <div className="cell"><span>6'4"</span></div>
+                        <div className="cell"><span>6'5"</span><span /></div>
+                        <div className="cell"><span>6'6"</span></div>
+                      </div>
+                      <div className="row">
+                        <div className="sizeFiller" style={{flex:'0'}} />
+                        <div className="sizeBar" style={{flex:'7'}} >13.5"</div>
+                        <div className="sizeFiller" style={{flex:'33'}} />
+                      </div>
+                      <div className="row">
+                        <div className="sizeFiller" style={{flex:'6'}} />
+                        <div className="sizeBar" style={{flex:'9'}} >15.5"</div>
+                        <div className="sizeFiller" style={{flex:'25'}} />
+                      </div>
+                      <div className="row">
+                        <div className="sizeFiller" style={{flex:'14'}} />
+                        <div className="sizeBar" style={{flex:'11'}} >17.5"</div>
+                        <div className="sizeFiller" style={{flex:'15'}} />
+                      </div>
+                      <div className="row">
+                        <div className="sizeFiller" style={{flex:'23'}} />
+                        <div className="sizeBar" style={{flex:'9'}} >18.5"</div>
+                        <div className="sizeFiller" style={{flex:'8'}} />
+                      </div>
+                      <div className="row">
+                        <div className="sizeFiller" style={{flex:'30'}} />
+                        <div className="sizeBar" style={{flex:'8'}} >21.5"</div>
+                        <div className="sizeFiller" style={{flex:'2'}} />
+                      </div>
+                      <div className="row">
+                        <div className="sizeFiller" style={{flex:'38'}} />
+                        <div className="sizeBar" style={{flex:'2'}} >23"</div>
+                        <div className="sizeFiller" style={{flex:'0'}} />
+                      </div>
+                    </div>
+                  </div>
+                  :
+                  <div className="content">
+                    <div className="faq">
+                      <div className="question">
+                        How many seasons will this last me?
+                        <div className="faqAuthor">Bill D.&nbsp;&nbsp;Jan, 2018</div>
+                      </div>
+                      <div className="answer">
+                        I've had mine for a few years now and it's still going strong
+                        <div className="faqAuthor">Eduardo T.&nbsp;&nbsp;Jan, 2018</div>
+                      </div>
+                      <div className="answer">
+                        I think the usual life span is 5 - 10 years
+                        <div className="faqAuthor">Max P.&nbsp;&nbsp;Feb, 2018</div>
+                      </div>
+                      <div className="reply">Reply</div>
+                    </div>
 
-            </div>
-            <div className="seeMore">Show More</div>
+                    <div className="faq">
+                      <div className="question">
+                        Does this work well as a commuter bike too?
+                        <div className="faqAuthor">Megan H.&nbsp;&nbsp;Dec, 2017</div>
+                      </div>
+                      <div className="answer">
+                        I've ridden mine to work before but I'm always scared it will get stolen
+                        <div className="faqAuthor">Raj M.&nbsp;&nbsp;Dec, 2017</div>
+                      </div>
+                      <div className="reply">Reply</div>
+                    </div>
+
+                    <div className="ask">Ask a Question</div>
+                  </div>
+            }
+
+
+            <div className="seeMore" style={{display:'none'}}>Show More</div>
           </div>
           <div className="reviews">
             <div className="top">
