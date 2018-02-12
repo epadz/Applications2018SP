@@ -1,0 +1,428 @@
+.product{
+    height: calc(100vh - 64px);
+    width: 100vw;
+    position: relative;
+    overflow-y: scroll;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.product .nextItem{
+
+}
+
+.product .prevItem{
+
+}
+
+.product .goBack{
+
+}
+
+.product .spacer{
+    height: 50vh;
+    width: 100vw;
+}
+
+.product .info{
+    background-color: #f8f8f8;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 5px 10px;
+    margin: 20px auto;
+    width: 60vw;
+    min-width: 800px;
+    box-sizing: border-box;
+    padding: 10px 20px;
+    display: flex;
+    border-radius: 2px;
+}
+
+.product .info .gallery{
+    flex: 2;
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.product .info .gallery .curImage{
+    width: 100%;
+    flex: 3;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.product .info .gallery .galleryNav{
+    flex: 1;
+    display: flex;
+}
+
+.product .info .gallery .galleryNav .galleryItem{
+    flex: 1;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 5px;
+}
+
+.product .info .productDetails{
+    flex: 4;
+}
+
+.product .info .basicInfo{
+    width: 100%;
+    display: flex;
+}
+
+.product .info .basicInfo .title{
+    font-size: 28px;
+    height: 34px;
+    font-weight: bold;
+}
+
+.product .info .basicInfo .price{
+    font-size: 18px;
+    height: 24px;
+    color: #666666;
+}
+
+.product .info .basicInfo .details{
+    height: 16px;
+    color: #666666;
+}
+
+.product .info .basicInfo .details > div{
+    float: left;
+    margin-right: 10px;
+    font-size: 12px;
+}
+
+.product .info .basicInfo .brand{
+    flex: 0 0 100px;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.product .info .desc{
+    width: 100%;
+    margin-top: 10px;
+    color: #666666;
+}
+
+.product .info .buy{
+    width: 100%;
+    margin: 30px 0 5px 0;
+    height: 30px;
+}
+
+.product .info .buy .label{
+    position: absolute;
+    top: -20px;
+    left: 0;
+    height: 16px;
+    font-size: 12px;
+    color: #666666;
+}
+
+.product .info .buy .colors{
+    height: 30px;
+    float: left;
+    position: relative;
+
+}
+
+.product .info .buy .colors > span {
+    width: 38px;
+    height: 38px;
+    display: block;
+    float: left;
+}
+
+.product .info .buy .sizing{
+    float: left;
+    height: 38px;
+    padding-top: 2px;
+    margin: 0 20px;
+    position: relative;
+
+}
+
+.product .info .buy .quantity{
+    float: left;
+    height: 38px;
+    padding-top: 2px;
+    margin: 0 20px;
+    position: relative;
+
+}
+
+.product .info .buy .addToCart{
+    float: right;
+    padding-top: 2px;
+}
+
+.product .specs{
+    background-color: #f8f8f8;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 5px 10px;
+    margin: 0 auto 20px auto;
+    width: 60vw;
+    min-width: 800px;
+    box-sizing: border-box;
+    padding: 10px 20px;
+    overflow-y: hidden;
+    position: relative;
+    border-radius: 2px;
+}
+
+.product .specs .tabs{
+    width: 100%;
+    height: 37px;
+    margin-bottom: 10px;
+    padding: 0 0 5px 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.product .specs .tabs .tab{
+    float: left;
+    font-size: 22px;
+    margin-right: 30px;
+    height: 32px;
+    line-height: 32px;
+    cursor: pointer;
+    color: #777777;
+}
+
+.product .specs .tabs .active{
+    float: left;
+    font-size: 22px;
+    margin-right: 30px;
+    height: 32px;
+    line-height: 32px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #000000;
+}
+
+.product .specs .seeMore{
+    position: absolute;
+    top: 316px;
+    left: 0;
+    width: 100%;
+    height: 34px;
+    line-height: 34px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    color: #666666;
+    background-color: #f8f8f8;
+    box-shadow: rgba(248, 248, 248, 1) 0 -15px 20px;
+}
+
+.product .specs .content{
+    width: 100%;
+    font-size: 14px;
+    position: relative;
+}
+
+.product .specs .title{
+    width: 100%;
+    height: 34px;
+    font-size: 18px;
+    font-weight: bolder;
+    padding: 10px 0 0 10px;
+
+}
+
+.table{
+    width: 100%;
+    min-height: 10px;
+    position: relative;
+    border-top: solid 1px #666666;
+    border-bottom: solid 1px #666666;
+    margin-bottom: 25px;
+}
+
+.table .row{
+    width: 100%;
+    min-height: 10px;
+    display: flex;
+    align-items: stretch;
+    position: relative;
+    margin: 0;
+
+}
+
+.table .row:nth-child(even){
+    background-color: #e8e8e8;
+}
+
+.table .row .cell{
+    min-height: 20px;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0;
+    padding: 10px;
+}
+
+.table .row .cell:first-child{
+    flex: 1;
+    font-weight: bold;
+}
+
+.table .row .cell:last-child{
+    flex: 5;
+    font-size: 12px;
+}
+
+.product .reviews{
+    background-color: #f8f8f8;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 5px 10px;
+    margin: 0 auto 20px auto;
+    width: 60vw;
+    min-width: 800px;
+    box-sizing: border-box;
+    padding: 10px 20px;
+    position: relative;
+    border-radius: 2px;
+}
+
+.product .reviews .top{
+    width: 100%;
+    height: 32px;
+    padding: 6px 0;
+}
+
+.product .reviews .top > div:first-child{
+    font-size: 18px;
+    font-weight: bold;
+    color: #000000;
+    line-height: 20px;
+    height: 20px;
+}
+
+.product .reviews .top > div{
+    float: left;
+    margin-right: 10px;
+}
+
+.product .reviews .highlights{
+    width: 100%;
+    min-height: 50px;
+    display: flex;
+}
+
+.product .reviews .highlights > div{
+    background-color: #e8e8e8;
+    padding: 5px;
+    border-radius: 2px;
+}
+
+.product .reviews .highlights .pros{
+    flex: 1;
+}
+
+.product .reviews .highlights .cons{
+    margin: 0 15px;
+    flex: 1;
+}
+
+.product .reviews .highlights > div .term{
+    display: inline-block;
+    padding: 5px;
+    height: 24px;
+    line-height: 14px;
+    font-size: 14px;
+    background-color: #c8c8c8;
+    margin: 4px;
+    word-break: keep-all;
+    border-radius: 2px;
+}
+
+.product .reviews .highlights .ratings{
+    flex: 0 0 160px;
+}
+
+.product .reviews .highlights .ratings .rating{
+    padding: 5px;
+    font-weight: bold;
+}
+
+.product .reviews .highlights .ratings .rating .starRating{
+    float: left;
+}
+
+.product .reviews .highlights div .title{
+    width: 100%;
+    height: 30px;
+    line-height: 20px;
+    font-size: 16px;
+    padding: 5px;
+}
+
+.product .reviews .loadMoreReviews{
+    width: 150px;
+    text-align: center;
+    height: 24px;
+    font-size: 16px;
+    margin: 10px auto;
+    background-color: #aaaaaa;
+    color: #000;
+    border-radius: 2px;
+}
+
+.review{
+    width: 100%;
+    min-height: 50px;
+    background-color: #e8e8e8;
+    margin-top: 16px;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    border-radius: 2px;
+}
+
+.review .reviewHeader{
+    width: 100%;
+    display: flex;
+    height: 64px;
+    margin-bottom: 10px;
+}
+
+.review .reviewHeader .reviewInfo{
+    flex: 1;
+}
+
+.review .reviewHeader .reviewInfo .reviewTitle{
+    height: 28px;
+    font-size: 24px;
+    line-height: 28px;
+}
+
+.review .reviewHeader .reviewInfo .reviewRating{
+    height: 20px;
+}
+
+.review .reviewHeader .reviewInfo .reviewAuthor{
+    height: 16px;
+
+}
+
+.review .reviewHeader .reviewInfo .reviewAuthor > span{
+    color: #666666;
+    margin-left: 10px;
+}
+
+.review .reviewHeader .reviewUsefulness{
+    flex: 0 0 250px;
+}
+
+.review .reviewHeader .reviewUsefulness > div{
+    margin: 0 5px;
+    float: right;
+}
+
+.review .reviewContent{
+
+}
