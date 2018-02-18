@@ -63,7 +63,7 @@
 
 .header .cart .numItemsInCart{
   position: absolute;
-  background-color: #b8b8b8;
+  background-color: #5F9EA0;
   height: 12px;
   min-width: 12px;
   border-radius: 6px;
@@ -76,6 +76,7 @@
   right: 0;
 }
 
-.content{
+.App > .content{
   width: 100vw;
+  height: calc(100vh - 64px);
 }

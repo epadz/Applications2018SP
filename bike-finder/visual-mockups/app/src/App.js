@@ -5,17 +5,21 @@ import Home from './home';
 import Listings from './listings';
 import Product from './product';
 
-const HOME = 'HOME';
-const LISTINGS = 'LISTINGS';
-const PRODUCT = 'PRODUCT';
+export const HOME = 'HOME';
+export const LISTINGS = 'LISTINGS';
+export const PRODUCT = 'PRODUCT';
 
 class App extends Component {
   constructor(props){
     super(props);
+    this.setPage = this.setPage.bind(this);
     this.state = {
-      page: HOME,
+      page: LISTINGS,
     }
   }
+
+  setPage = page => this.setState({page});
+
   render() {
     return (
       <div className="App">
@@ -25,7 +29,13 @@ class App extends Component {
           <div className="cart"><Glyphicon glyph="shopping-cart" /><div className="numItemsInCart">1</div></div>
         </div>
         <div className="content">
-          <Product />
+          {
+            this.state.page === LISTINGS
+                ? <Listings setPage={this.setPage} />
+                : this.state.page === PRODUCT
+                  ? <Product setPage={this.setPage} />
+                  : <Home setPage={this.setPage} />
+          }
         </div>
       </div>
     );

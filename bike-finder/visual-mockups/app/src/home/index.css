@@ -2,9 +2,7 @@
     margin: 0 auto;
     width: 60vw;
     min-width: 600px;
-    height: calc(100vh - 64px);
     position: relative;
-    overflow-y: scroll;
     overflow-x: hidden;
 }
 
@@ -32,6 +30,7 @@
     flex-direction: column;
     justify-content: space-around;
     border-radius: 2px;
+    cursor: pointer;
 }
 
 .page .categories .categoryRow .titleTile{
