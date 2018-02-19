@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Glyphicon} from 'react-bootstrap';
 import { Scrollbars } from 'react-custom-scrollbars';
 import {StarRating, DropDown, ColorDot, Button, Number} from '../common';
+import ProductTile from '../listings/productTile';
 import Review from './review';
 import './index.css';
 
@@ -14,6 +15,7 @@ import orange from '../assets/bikes/trekProcaliberOrange1.jpg';
 import o2 from '../assets/bikes/trekProcaliberO2.jpg'
 import o3 from '../assets/bikes/trekProcaliberO3.jpg'
 import trek from '../assets/logos/trek.png';
+import Slash from '../assets/bikes/trekSlash.jpg';
 
 const SPECS = 'specs';
 const SIZING = 'sizing';
@@ -38,10 +40,24 @@ class Product extends Component {
     return (
         <div className="productWrapper">
           <div className="productSidebar">
-
+            <div className="productSidebarTop">
+              <div className="backButton">
+                <div style={{flex: '0 0 28px', color: '#5F9EA0'}}><Glyphicon glyph="arrow-left"/></div>
+                <div style={{flex: '1'}}>Back</div>
+              </div>
+              <div className="sidebarTitle">Pinned</div>
+            </div>
+            <Scrollbars style={{ width: '100%', flex: '1' }} autoHide hideTracksWhenNotNeeded>
+              <ProductTile name="Slash 9.8" image={Slash} price="$1,200" brand="Trek" rating={0.75} year="2018"
+                           desc="Advanced Mountain" pinned
+                           colors={[['#FF9133', '#000000'], ['#05B611'], ['#000000', '#ffffff'],]} small/>
+              <ProductTile name="Procaliber 9.8 SL" pinned image={img1} price="$4,499.99" rating={0.8} year="2018"
+                           desc="Mountain" level="Advanced" brand="Trek" small selected
+                           colors={[['#FF9133', '#000000'], ['#05B611'], ['#000000', '#ffffff'],]}/>
+            </Scrollbars>
           </div>
           <div className="product"  >
-            <Scrollbars style={{ width: '100%', height: '100%' }} ref={elem => this.scroll = elem}>
+            <Scrollbars style={{ width: '100%', height: '100%' }} autoHide hideTracksWhenNotNeeded ref={elem => this.scroll = elem}>
               <div className="topPhoto" style={{backgroundImage: `url(${img2})`}} />
               <div className="info" ref={elem => this.details = elem}>
                 <div className="gallery">

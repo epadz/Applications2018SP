@@ -9,15 +9,13 @@ import ActiveFilter from './activeFilter';
 import {DropDown} from "../common";
 import './index.css';
 
-import Trek from '../assets/logos/trek.png';
 import Slash from '../assets/bikes/trekSlash.jpg';
 import TopFuel from '../assets/bikes/trekTopFuel.jpg';
 
-import Cannondale from '../assets/logos/cannondale.png';
 import Habit from '../assets/bikes/cannondaleHabit.jpg';
-
-import Specialized from '../assets/logos/specialized.png';
+import proCal from '../assets/bikes/trekProcaliber1.jpg';
 import Rockhopper from '../assets/bikes/specializedRockhopper.jpg';
+import {PRODUCT} from "../App";
 
 class Listings extends Component {
 
@@ -127,11 +125,11 @@ class Listings extends Component {
                 </div>
               </div>
               <div className="results">
-                <ProductTile name="Procaliber 9.8 SL" pinned image={Slash} price="$4,499.99" rating={0.8} year="2018"
-                             desc="Mountain" level="Advanced" brand="Trek"
+                <ProductTile name="Procaliber 9.8 SL" pinned image={proCal} price="$4,499.99" rating={0.8} year="2018"
+                             desc="Mountain" level="Advanced" brand="Trek" onClick={() => this.props.setPage(PRODUCT)}
                              colors={[['#FF9133', '#000000'], ['#05B611'], ['#000000', '#ffffff'],]}/>
                 <ProductTile name="Slash 9.8" pinned image={Slash} price="$1,200" rating={0.75} year="2018"
-                             desc="Mountain" level="Advanced" brand="Trek"
+                             desc="Mountain" level="Advanced" brand="Trek" tag="sale"
                              colors={[['#FF9133', '#000000'], ['#05B611'], ['#000000', '#ffffff'],]}/>
                 <ProductTile name="Top Fuel" image={TopFuel} price="$3,100" rating={0.85} year="2018" brand="Trek"
                              desc="Mountain" level="Advanced" colors={[['#000000', '#ff3a33',], ['#ffffff'], ['#05B611'],]}/>
@@ -150,6 +148,9 @@ class Listings extends Component {
                 <ProductTile name="Slash 9.8" image={Slash} price="$1,200" brand="Trek" rating={0.75} year="2018"
                              desc="Advanced Mountain" pinned
                              colors={[['#FF9133', '#000000'], ['#05B611'], ['#000000', '#ffffff'],]} small/>
+                <ProductTile name="Procaliber 9.8 SL" pinned image={proCal} price="$4,499.99" rating={0.8} year="2018"
+                             desc="Mountain" level="Advanced" brand="Trek" small
+                             colors={[['#FF9133', '#000000'], ['#05B611'], ['#000000', '#ffffff'],]}/>
               </div>
             </div>
           </div>

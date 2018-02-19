@@ -14,7 +14,7 @@ class App extends Component {
     super(props);
     this.setPage = this.setPage.bind(this);
     this.state = {
-      page: LISTINGS,
+      page: HOME,
     }
   }
 

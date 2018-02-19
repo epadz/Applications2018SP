@@ -84,8 +84,8 @@ Button
     float: left;
     height: 32px;
     min-width: 64px;
-    background-color: #333333;
-    color: #fffaf0;
+    background-color: #c8c8c8;
+    color: #333333;
     cursor: pointer;
     position: relative;
     padding: 4px 8px;
@@ -98,6 +98,7 @@ Button
 
 .button .glyphicon{
     margin-left: 10px;
+    color: #5F9EA0;
 }
 
 /**
