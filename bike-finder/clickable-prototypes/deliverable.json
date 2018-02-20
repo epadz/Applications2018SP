@@ -1,8 +1,0 @@
-{
-  "entrypoints" : [
-    {
-      "name" : "Index",
-      "file" : "https://epadz.github.io/bike-finder/"
-    }
-  ]
-}
