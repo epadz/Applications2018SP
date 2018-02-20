@@ -1,0 +1,12 @@
+use fewer boxes and imply organization through alignment rather than frames
+
+size dropdown maybe not black - distracts
+
+current filters / sorting too dark
+
+get rid of logo images
+
+shaddows more subtle
+
+smaller filter text, tile text
+
