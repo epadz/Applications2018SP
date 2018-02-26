@@ -1,0 +1,8 @@
+{
+  "entrypoints" : [
+    {
+      "name" : "Flow Chart",
+      "file" : "chart.png"
+    }
+  ]
+}
